@@ -30,7 +30,7 @@ class CustomDialog extends StatelessWidget {
           ),
           margin: EdgeInsets.only(top: 16),
           decoration: BoxDecoration(
-              color: Colors.white,
+              color: Color.fromARGB(255, 219, 219, 219),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(17),
               boxShadow: [
@@ -56,7 +56,10 @@ class CustomDialog extends StatelessWidget {
             Align(
               alignment: Alignment.bottomRight,
               child: TextButton(
-                child: Text("Okey"),
+                child: Text(
+                  "Okey",
+                  style: TextStyle(color: Colors.black),
+                ),
                 onPressed: () {
                   Navigator.pop(context);
                 },
@@ -71,7 +74,7 @@ class CustomDialog extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: Colors.blueGrey,
             radius: 50,
-            backgroundImage: AssetImage("assets/tik.png"),
+            backgroundImage: AssetImage("assets/7efs.gif"),
           ),
         )
       ],
