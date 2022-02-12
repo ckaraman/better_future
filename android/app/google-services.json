@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "594603711795",
+    "project_id": "betterfuture-24710",
+    "storage_bucket": "betterfuture-24710.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594603711795:android:abdc502ac026da6b603246",
+        "android_client_info": {
+          "package_name": "com.cksoftwaree.better_future"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594603711795-6c7aoob3jjv8n74sqpcab3g43pgb4s6f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqy5bkwtrKa_TKJI1sylkfzOO-poe5F80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594603711795-6c7aoob3jjv8n74sqpcab3g43pgb4s6f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
