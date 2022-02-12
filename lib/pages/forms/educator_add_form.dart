@@ -1,5 +1,5 @@
 import 'package:better_future/models/energy_models.dart';
-import 'package:better_future/project_image_add.dart';
+import 'package:better_future/widgets/project_image_add.dart';
 import 'package:flutter/material.dart';
 
 class EducatorAdd extends StatefulWidget {

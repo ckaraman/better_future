@@ -1,7 +1,9 @@
-import 'package:better_future/pages/educator_add_form.dart';
+import 'package:better_future/pages/forms/educator_add_form.dart';
+import 'package:better_future/pages/list_page.dart';
+import 'package:better_future/pages/login_page.dart';
 import 'package:better_future/pages/myEducations_page.dart';
 import 'package:better_future/pages/myProjects_page.dart';
-import 'package:better_future/pages/project_add_form.dart';
+import 'package:better_future/pages/forms/project_add_form.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -33,6 +35,14 @@ class _MainPageState extends State<MainPage> {
               currentAccountPicture: CircleAvatar(
                   //backgroundImage: AssetImage("assets/images/beyaz.png"),
                   ),
+            ),
+            ListTile(
+              title: const Text('Giriş Yap'),
+              leading: const Icon(Icons.door_back_door_outlined),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()));
+              },
             ),
             ListTile(
               title: const Text('Proje Ekle'),
@@ -86,7 +96,7 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
       ),
-      // body: StatusListPage()
+      body: ListPage(),
     );
   }
 }

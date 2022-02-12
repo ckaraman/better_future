@@ -55,30 +55,27 @@ class _ProjectImageState extends State<ProjectImage>
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
+            const SizedBox(height: 50),
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width / 1.2),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  )),
+            ),
             const SizedBox(
               height: 100,
             ),
-            /* Image.network(
-              _image,
-              width: 300,
-            ),*/
-            const SizedBox(
-              height: 50,
-            ),
-            Text(
-              'Upload your file',
-              style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.grey.shade800,
-                  fontWeight: FontWeight.bold),
-            ),
+            buildText('Upload Your File', 25, Colors.grey.shade800),
             const SizedBox(
               height: 10,
             ),
-            Text(
-              'File should be jpg, png',
-              style: TextStyle(fontSize: 15, color: Colors.grey.shade500),
-            ),
+            buildText('File should be jpeg png', 15, Colors.grey.shade500),
             const SizedBox(
               height: 20,
             ),
@@ -110,11 +107,7 @@ class _ProjectImageState extends State<ProjectImage>
                           const SizedBox(
                             height: 15,
                           ),
-                          Text(
-                            'Select your file',
-                            style: TextStyle(
-                                fontSize: 15, color: Colors.grey.shade400),
-                          ),
+                          buildText('Select You File', 15, Colors.grey.shade400)
                         ],
                       ),
                     ),
@@ -126,13 +119,7 @@ class _ProjectImageState extends State<ProjectImage>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'Selected File',
-                          style: TextStyle(
-                            color: Colors.grey.shade400,
-                            fontSize: 15,
-                          ),
-                        ),
+                        buildText('Select File', 15, Colors.grey.shade400),
                         const SizedBox(
                           height: 10,
                         ),
@@ -165,22 +152,15 @@ class _ProjectImageState extends State<ProjectImage>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text(
-                                        _platformFile!.name,
-                                        style: const TextStyle(
-                                            fontSize: 13,
-                                            color:
-                                                Color.fromARGB(255, 238, 8, 8)),
-                                      ),
+                                      buildText(
+                                          _platformFile!.name, 13, Colors.red),
                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      Text(
-                                        '${(_platformFile!.size / 1024).ceil()} KB',
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            color: Colors.grey.shade500),
-                                      ),
+                                      buildText(
+                                          '${_platformFile!.size / 1024.ceil()} KB',
+                                          13,
+                                          Colors.grey.shade500),
                                       const SizedBox(
                                         height: 5,
                                       ),
@@ -224,6 +204,17 @@ class _ProjectImageState extends State<ProjectImage>
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Text buildText(String string, double fontsize, Color colors) {
+    return Text(
+      string,
+      style: TextStyle(
+        fontSize: fontsize,
+        color: colors,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

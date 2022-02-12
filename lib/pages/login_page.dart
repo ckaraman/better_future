@@ -1,4 +1,4 @@
-import 'package:better_future/pages/home_page.dart';
+import 'package:better_future/pages/main_page.dart';
 import 'package:better_future/pages/registration_page.dart';
 import 'package:better_future/services/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   )
                   .then((uid) => {
                         Navigator.of(context).pushReplacement(MaterialPageRoute(
-                            builder: (context) => const HomePage())),
+                            builder: (context) => const MainPage())),
                       });
             }
           },
@@ -171,41 +171,4 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
-  // login function
-  // void signIn(String email, String password) async {
-  //   if (_formKey.currentState!.validate()) {
-  //     try {
-  //       await _auth
-  //           .signInWithEmailAndPassword(email: email, password: password)
-
-  //     } on FirebaseAuthException catch (error) {
-  //       switch (error.code) {
-  //         case "invalid-email":
-  //           errorMessage = "Your email address appears to be malformed.";
-
-  //           break;
-  //         case "wrong-password":
-  //           errorMessage = "Your password is wrong.";
-  //           break;
-  //         case "user-not-found":
-  //           errorMessage = "User with this email doesn't exist.";
-  //           break;
-  //         case "user-disabled":
-  //           errorMessage = "User with this email has been disabled.";
-  //           break;
-  //         case "too-many-requests":
-  //           errorMessage = "Too many requests";
-  //           break;
-  //         case "operation-not-allowed":
-  //           errorMessage = "Signing in with Email and Password is not enabled.";
-  //           break;
-  //         default:
-  //           errorMessage = "An undefined Error happened.";
-  //       }
-  //       Fluttertoast.showToast(msg: errorMessage!);
-  //       print(error.code);
-  //     }
-  //   }
-  // }
 }
