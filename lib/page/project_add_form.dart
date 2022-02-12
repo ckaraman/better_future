@@ -1,3 +1,4 @@
+import 'package:better_future/project_image_add.dart';
 import 'package:flutter/material.dart';
 
 class ProjectAdd extends StatefulWidget {
@@ -9,26 +10,33 @@ class ProjectAdd extends StatefulWidget {
 
 class _ProjectAddState extends State<ProjectAdd> {
   final formKey = GlobalKey<FormState>();
-  String username = '';
-  String email = '';
-  String password = '';
+  String projectName = '';
+  String konu = '';
+  String projectIn = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Hello Appbar"),
+      ),
       body: Form(
         key: formKey,
         //autovalidateMode: AutovalidateMode.onUserInteraction,
         child: ListView(
           padding: EdgeInsets.all(16),
           children: [
-            buildProjectName(),
-            const SizedBox(height: 16),
-            buildKonu(),
+            buildsd("Proje Adı", "Proje Adı Giriniz"),
             const SizedBox(height: 32),
-            buildDocument(),
+            buildsd("Konu", "Konu Giriniz"),
             const SizedBox(height: 32),
+            buildsd("Proje Detayı", "Proje Detay Giriniz"),
+            const SizedBox(height: 32),
+            buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
+            const SizedBox(height: 32),
+
             // buildPassword(),
             // const SizedBox(height: 32),
+            buildAddImage(),
             buildSubmit(),
           ],
         ),
@@ -36,7 +44,58 @@ class _ProjectAddState extends State<ProjectAdd> {
     );
   }
 
-  Widget buildProjectName() => TextFormField(
+  Widget buildsd(String labelText, String errorMessage) => TextFormField(
+        decoration: InputDecoration(
+          labelText: labelText,
+          border: OutlineInputBorder(),
+        ),
+        validator: (value) {
+          // final pattern = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
+          //final regExp = RegExp(pattern);
+
+          if (value!.isEmpty) {
+            return errorMessage;
+          } //else if (!regExp.hasMatch(value)) {
+          // return 'Enter a valid email';}
+          else {
+            return null;
+          }
+        },
+        // onSaved: (value) => setState(() => contents = value!),
+      );
+  Widget buildAddImage() => ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProjectImage()));
+      },
+      child: Text("Görsel Ekle"));
+  Widget buildSubmit() => Builder(
+        builder: (context) => ElevatedButton(
+          child: Text('Ekle'),
+          onPressed: () {
+            final isValid = formKey.currentState!.validate();
+            // FocusScope.of(context).unfocus();
+
+            if (isValid) {
+              formKey.currentState?.save();
+
+              final message =
+                  //   'Username: $projectName\nPassword: $projectIn\nEmail: $konu';
+                  "Eklendi";
+              final snackBar = SnackBar(
+                content: Text(
+                  message,
+                  style: TextStyle(fontSize: 20),
+                ),
+                backgroundColor: Colors.green,
+              );
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            }
+          },
+        ),
+      );
+
+  /* Widget buildProjectName() => TextFormField(
         decoration: InputDecoration(
           labelText: 'Project Name',
           border: OutlineInputBorder(),
@@ -48,7 +107,7 @@ class _ProjectAddState extends State<ProjectAdd> {
         ),
         validator: (value) {
           if (value!.length < 4) {
-            return 'Enter at least 4 characters';
+            return 'Proje Adı 4 harften fazla olmalı';
           } else {
             return null;
           }
@@ -66,10 +125,10 @@ class _ProjectAddState extends State<ProjectAdd> {
           final regExp = RegExp(pattern);
 
           if (value!.isEmpty) {
-            return 'Enter an email';
-          } else if (!regExp.hasMatch(value)) {
-            return 'Enter a valid email';
-          } else {
+            return 'Konu Giriniz';
+          } // else if (!regExp.hasMatch(value)) {
+          // return 'Enter a valid email';}
+          else {
             return null;
           }
         },
@@ -86,16 +145,17 @@ class _ProjectAddState extends State<ProjectAdd> {
           final regExp = RegExp(pattern);
 
           if (value!.isEmpty) {
-            return 'Enter an email';
-          } else if (!regExp.hasMatch(value)) {
-            return 'Enter a valid email';
-          } else {
+            return 'Proje İçeriği Giriniz';
+          } //else if (!regExp.hasMatch(value)) {
+          // return 'Enter a valid email';}
+          else {
             return null;
           }
         },
         keyboardType: TextInputType.emailAddress,
         onSaved: (value) => setState(() => email = value!),
       );
+*/
 
   /* Widget buildPassword() => TextFormField(
         decoration: InputDecoration(
@@ -114,28 +174,5 @@ class _ProjectAddState extends State<ProjectAdd> {
         obscureText: true,
       );
       */
-  Widget buildSubmit() => Builder(
-        builder: (context) => ElevatedButton(
-          child: Text('Ekle'),
-          onPressed: () {
-            final isValid = formKey.currentState!.validate();
-            // FocusScope.of(context).unfocus();
 
-            if (isValid) {
-              formKey.currentState?.save();
-
-              final message =
-                  'Username: $username\nPassword: $password\nEmail: $email';
-              final snackBar = SnackBar(
-                content: Text(
-                  message,
-                  style: TextStyle(fontSize: 20),
-                ),
-                backgroundColor: Colors.green,
-              );
-              ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            }
-          },
-        ),
-      );
 }
