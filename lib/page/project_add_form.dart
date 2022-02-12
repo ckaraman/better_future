@@ -1,3 +1,4 @@
+import 'package:better_future/models/notification_settings_model.dart';
 import 'package:better_future/project_image_add.dart';
 import 'package:better_future/project_video_add.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +16,14 @@ class _ProjectAddState extends State<ProjectAdd> {
   String konu = '';
   String projectIn = '';
   String appbarTitle = "Proje Ekleme Formu";
+  double sizedBoxHeight = 12;
+
+  get onChanged => null;
+
+  final notifications = [
+    NotificationSetting(title: 'Maddi Yardıma İhtiyacım var'),
+    NotificationSetting(title: 'Hammadde Yardımına İhtiyacım Var'),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -29,19 +38,21 @@ class _ProjectAddState extends State<ProjectAdd> {
           padding: const EdgeInsets.all(16),
           children: [
             buildsd("Proje Adı", "Proje Adı Giriniz"),
-            const SizedBox(height: 32),
+            SizedBox(height: sizedBoxHeight),
             buildsd("Konu", "Konu Giriniz"),
-            const SizedBox(height: 32),
+            SizedBox(height: sizedBoxHeight),
             buildsd("Proje Detayı", "Proje Detay Giriniz"),
-            const SizedBox(height: 32),
+            SizedBox(height: sizedBoxHeight),
             buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
-            const SizedBox(height: 32),
+            SizedBox(height: sizedBoxHeight),
 
-            // buildPassword(),
-            // const SizedBox(height: 32),
+            //const Divider(),
+            ...notifications.map(buildSingleCheckbox).toList(),
+
             buildAddImage(),
 
             buildAddVideo(),
+
             buildSubmit(),
           ],
         ),
@@ -73,8 +84,8 @@ class _ProjectAddState extends State<ProjectAdd> {
 
   Widget buildAddImage() => ElevatedButton(
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ProjectImage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProjectImage()));
       },
       child: const Text("Fotoğraf Ekle"));
 
@@ -108,6 +119,31 @@ class _ProjectAddState extends State<ProjectAdd> {
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             }
           },
+        ),
+      );
+
+  Widget buildSingleCheckbox(NotificationSetting notification) => buildCheckbox(
+        notification: notification,
+        onClicked: () {
+          setState(() {
+            final newValue = !notification.value;
+            notification.value = newValue;
+          });
+        },
+      );
+
+  Widget buildCheckbox({
+    required NotificationSetting notification,
+    required VoidCallback onClicked,
+  }) =>
+      ListTile(
+        onTap: onClicked,
+        leading: Checkbox(
+          value: notification.value,
+          onChanged: (value) => onClicked(),
+        ),
+        title: Text(
+          notification.title,
         ),
       );
 

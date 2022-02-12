@@ -1,8 +1,9 @@
+import 'package:better_future/models/energy_models.dart';
 import 'package:better_future/project_image_add.dart';
 import 'package:flutter/material.dart';
 
 class EducatorAdd extends StatefulWidget {
-  EducatorAdd({Key? key}) : super(key: key);
+  const EducatorAdd({Key? key}) : super(key: key);
 
   @override
   State<EducatorAdd> createState() => _EducatorAddState();
@@ -14,6 +15,38 @@ class _EducatorAddState extends State<EducatorAdd> {
   String konu = '';
   String projectIn = '';
   String appBarTitle = "Eğitmen Kayıt Formu";
+  double sizedBoxHeight = 12;
+
+  final List<Energys> _companies = Energys.getCompanies();
+  late List<DropdownMenuItem<Energys>> _dropdownMenuItems;
+  late Energys _selectedCompany;
+
+  @override
+  void initState() {
+    _dropdownMenuItems = buildDropdownMenuItems(_companies);
+    _selectedCompany = _dropdownMenuItems[0].value!;
+    super.initState();
+  }
+
+  List<DropdownMenuItem<Energys>> buildDropdownMenuItems(List companies) {
+    List<DropdownMenuItem<Energys>> items = [];
+    for (Energys company in companies) {
+      items.add(
+        DropdownMenuItem(
+          value: company,
+          child: Text(company.name),
+        ),
+      );
+    }
+    return items;
+  }
+
+  void onChangeDropdownItem(Energys? selectedCompany) {
+    setState(() {
+      _selectedCompany = selectedCompany!;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,26 +57,29 @@ class _EducatorAddState extends State<EducatorAdd> {
         key: formKey,
         //autovalidateMode: AutovalidateMode.onUserInteraction,
         child: ListView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           children: [
             buildAddPhoto(),
-            const SizedBox(height: 16),
+            SizedBox(height: sizedBoxHeight),
+
             buildsd("Name-Surname", "Name-Surname Giriniz"),
-            const SizedBox(height: 16),
-
+            SizedBox(height: sizedBoxHeight),
             buildsd("Yaşınız", "Yaş Giriniz"),
-            const SizedBox(height: 16),
-            buildsd("Hangi Alanda Eğitim Vermek İstiyorsunuz?", "Konu Giriniz"),
-            const SizedBox(height: 16),
-            buildsd("Proje Detayı", "Proje Detay Giriniz"),
-            const SizedBox(height: 16),
+            SizedBox(height: sizedBoxHeight),
+            buildsd("E-Mail", "E-Mail Giriniz"),
+            SizedBox(height: sizedBoxHeight),
+            buildDropDown(),
+            SizedBox(height: sizedBoxHeight),
+            buildsd("Hangi Günler Eğitim Verebilirsiniz?",
+                "Telefon Numarası Giriniz"),
+            SizedBox(height: sizedBoxHeight),
             buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
-            const SizedBox(height: 16),
 
+            SizedBox(height: sizedBoxHeight),
+            buildSubmit(),
             // buildPassword(),
             // const SizedBox(height: 32),
             // buildAddImage(),
-            buildSubmit(),
           ],
         ),
       ),
@@ -53,7 +89,7 @@ class _EducatorAddState extends State<EducatorAdd> {
   Widget buildsd(String labelText, String errorMessage) => TextFormField(
         decoration: InputDecoration(
           labelText: labelText,
-          border: OutlineInputBorder(),
+          border: const OutlineInputBorder(),
         ),
         validator: (value) {
           // final pattern = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
@@ -69,12 +105,13 @@ class _EducatorAddState extends State<EducatorAdd> {
         },
         // onSaved: (value) => setState(() => contents = value!),
       );
+
   Widget buildAddImage() => ElevatedButton(
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ProjectImage()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProjectImage()));
       },
-      child: Text("Fotoğraf Ekle"));
+      child: const Text("Fotoğraf Ekle"));
 
   Widget buildAddPhoto() => Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,10 +119,12 @@ class _EducatorAddState extends State<EducatorAdd> {
         children: <Widget>[
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProjectImage()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const ProjectImage()));
             },
-            child: Container(
+            child: const SizedBox(
               width: 80.0,
               height: 80.0,
               child: CircleAvatar(
@@ -97,9 +136,10 @@ class _EducatorAddState extends State<EducatorAdd> {
           ),
         ],
       );
+
   Widget buildSubmit() => Builder(
         builder: (context) => ElevatedButton(
-          child: Text('Ekle'),
+          child: const Text('Ekle'),
           onPressed: () {
             final isValid = formKey.currentState!.validate();
             // FocusScope.of(context).unfocus();
@@ -107,19 +147,25 @@ class _EducatorAddState extends State<EducatorAdd> {
             if (isValid) {
               formKey.currentState?.save();
 
-              final message =
+              const message =
                   //   'Username: $projectName\nPassword: $projectIn\nEmail: $konu';
                   "Eklendi";
-              final snackBar = SnackBar(
+              const snackBar = SnackBar(
                 content: Text(
                   message,
                   style: TextStyle(fontSize: 20),
                 ),
-                backgroundColor: Colors.green,
+                backgroundColor: Color.fromARGB(255, 64, 68, 64),
               );
               ScaffoldMessenger.of(context).showSnackBar(snackBar);
             }
           },
         ),
+      );
+
+  Widget buildDropDown() => DropdownButton(
+        value: _selectedCompany,
+        items: _dropdownMenuItems,
+        onChanged: onChangeDropdownItem,
       );
 }

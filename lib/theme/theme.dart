@@ -154,7 +154,7 @@ class AppThemes {
     ),
     inputDecorationTheme: const InputDecorationTheme(
       labelStyle: TextStyle(
-        color: Color.fromARGB(221, 196, 27, 27),
+        color: Color.fromARGB(221, 2, 2, 2),
         fontSize: null,
         fontWeight: FontWeight.w400,
         fontStyle: FontStyle.normal,
