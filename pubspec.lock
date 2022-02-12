@@ -29,6 +29,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.1"
+  chewie:
+    dependency: "direct main"
+    description:
+      name: chewie
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.2"
   clock:
     dependency: transitive
     description:
@@ -64,6 +71,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+<<<<<<< HEAD
   cross_file:
     dependency: transitive
     description:
@@ -71,6 +79,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.2"
+=======
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
   csslib:
     dependency: transitive
     description:
@@ -113,6 +123,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.2"
+<<<<<<< HEAD
   file_picker:
     dependency: "direct main"
     description:
@@ -183,6 +194,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.2.8"
+=======
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
   flutter:
     dependency: "direct main"
     description: flutter
@@ -212,6 +225,7 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+<<<<<<< HEAD
   fluttertoast:
     dependency: "direct main"
     description:
@@ -219,6 +233,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "8.0.8"
+=======
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
   html:
     dependency: transitive
     description:
@@ -226,6 +242,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.15.0"
+<<<<<<< HEAD
   http:
     dependency: transitive
     description:
@@ -275,6 +292,8 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.17.0"
+=======
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
   js:
     dependency: transitive
     description:
@@ -317,6 +336,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -324,6 +350,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
+<<<<<<< HEAD
   path_drawing:
     dependency: transitive
     description:
@@ -352,6 +379,22 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
+=======
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.2"
+  provider:
+    dependency: transitive
+    description:
+      name: provider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.0"
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
   sky_engine:
     dependency: transitive
     description: flutter
@@ -414,7 +457,11 @@ packages:
     source: hosted
     version: "2.1.1"
   video_player:
+<<<<<<< HEAD
     dependency: "direct dev"
+=======
+    dependency: "direct main"
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
     description:
       name: video_player
       url: "https://pub.dartlang.org"
@@ -448,6 +495,51 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.7"
+<<<<<<< HEAD
+=======
+  wakelock:
+    dependency: transitive
+    description:
+      name: wakelock
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.6"
+  wakelock_macos:
+    dependency: transitive
+    description:
+      name: wakelock_macos
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_platform_interface:
+    dependency: transitive
+    description:
+      name: wakelock_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.0"
+  wakelock_web:
+    dependency: transitive
+    description:
+      name: wakelock_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.4.0"
+  wakelock_windows:
+    dependency: transitive
+    description:
+      name: wakelock_windows
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
+  win32:
+    dependency: transitive
+    description:
+      name: win32
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.3.11"
+>>>>>>> d7d617fb9005a37c59878ccfb0046c54f7bf51b2
 sdks:
   dart: ">=2.16.0 <3.0.0"
   flutter: ">=2.8.0"
