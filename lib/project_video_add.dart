@@ -8,14 +8,14 @@ import 'package:file_picker/file_picker.dart';
 //import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
-class ProjectImage extends StatefulWidget {
-  ProjectImage({Key? key}) : super(key: key);
+class ProjectVideo extends StatefulWidget {
+  ProjectVideo({Key? key}) : super(key: key);
 
   @override
-  State<ProjectImage> createState() => _ProjectImageState();
+  State<ProjectVideo> createState() => _ProjectVideoState();
 }
 
-class _ProjectImageState extends State<ProjectImage>
+class _ProjectVideoState extends State<ProjectVideo>
     with SingleTickerProviderStateMixin {
   // String _image = 'https://ouch-cdn2.icons8.com/84zU-uvFboh65geJMR5XIHCaNkx-BZ2TahEpE9TpVJM/rs:fit:784:784/czM6Ly9pY29uczgu/b3VjaC1wcm9kLmFz/c2V0cy9wbmcvODU5/L2E1MDk1MmUyLTg1/ZTMtNGU3OC1hYzlh/LWU2NDVmMWRiMjY0/OS5wbmc.png';
 
@@ -24,8 +24,8 @@ class _ProjectImageState extends State<ProjectImage>
   PlatformFile? _platformFile;
 
   selectFile() async {
-    final file = await FilePicker.platform.pickFiles(
-        type: FileType.custom, allowedExtensions: ['png', 'jpg', 'jpeg']);
+    final file = await FilePicker.platform
+        .pickFiles(type: FileType.custom, allowedExtensions: ['mp4']);
 
     if (file != null) {
       setState(() {
@@ -76,7 +76,7 @@ class _ProjectImageState extends State<ProjectImage>
               height: 10,
             ),
             Text(
-              'File should be jpg, png',
+              'File should be mp4',
               style: TextStyle(fontSize: 15, color: Colors.grey.shade500),
             ),
             SizedBox(
@@ -151,12 +151,6 @@ class _ProjectImageState extends State<ProjectImage>
                                 ]),
                             child: Row(
                               children: [
-                                ClipRRect(
-                                    borderRadius: BorderRadius.circular(8),
-                                    child: Image.file(
-                                      _file!,
-                                      width: 70,
-                                    )),
                                 SizedBox(
                                   width: 10,
                                 ),

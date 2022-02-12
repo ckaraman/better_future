@@ -1,5 +1,6 @@
 import 'package:better_future/page/educator_add_form.dart';
 import 'package:better_future/page/project_add_form.dart';
+import 'package:better_future/theme/theme.dart';
 //import 'package:better_future/project_image_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +12,7 @@ Future main() async {
     DeviceOrientation.portraitDown,
   ]);
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,10 +23,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: EducatorAdd(),
+      theme: AppThemes.lightTheme,
+      home: const ProjectAdd(),
     );
   }
 }

@@ -26,21 +26,23 @@ class _EducatorAddState extends State<EducatorAdd> {
         child: ListView(
           padding: EdgeInsets.all(16),
           children: [
+            buildAddPhoto(),
+            const SizedBox(height: 16),
             buildsd("Name-Surname", "Name-Surname Giriniz"),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
 
             buildsd("Yaşınız", "Yaş Giriniz"),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
             buildsd("Hangi Alanda Eğitim Vermek İstiyorsunuz?", "Konu Giriniz"),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
             buildsd("Proje Detayı", "Proje Detay Giriniz"),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
             buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
-            const SizedBox(height: 32),
+            const SizedBox(height: 16),
 
             // buildPassword(),
             // const SizedBox(height: 32),
-            buildAddImage(),
+            // buildAddImage(),
             buildSubmit(),
           ],
         ),
@@ -73,6 +75,28 @@ class _EducatorAddState extends State<EducatorAdd> {
             context, MaterialPageRoute(builder: (context) => ProjectImage()));
       },
       child: Text("Fotoğraf Ekle"));
+
+  Widget buildAddPhoto() => Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProjectImage()));
+            },
+            child: Container(
+              width: 80.0,
+              height: 80.0,
+              child: CircleAvatar(
+                child: Icon(
+                  Icons.camera_alt,
+                ),
+              ),
+            ),
+          ),
+        ],
+      );
   Widget buildSubmit() => Builder(
         builder: (context) => ElevatedButton(
           child: Text('Ekle'),

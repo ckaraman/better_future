@@ -1,8 +1,9 @@
 import 'package:better_future/project_image_add.dart';
+import 'package:better_future/project_video_add.dart';
 import 'package:flutter/material.dart';
 
 class ProjectAdd extends StatefulWidget {
-  ProjectAdd({Key? key}) : super(key: key);
+  const ProjectAdd({Key? key}) : super(key: key);
 
   @override
   State<ProjectAdd> createState() => _ProjectAddState();
@@ -25,7 +26,7 @@ class _ProjectAddState extends State<ProjectAdd> {
         key: formKey,
         //autovalidateMode: AutovalidateMode.onUserInteraction,
         child: ListView(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           children: [
             buildsd("Proje Adı", "Proje Adı Giriniz"),
             const SizedBox(height: 32),
@@ -39,6 +40,8 @@ class _ProjectAddState extends State<ProjectAdd> {
             // buildPassword(),
             // const SizedBox(height: 32),
             buildAddImage(),
+
+            buildAddVideo(),
             buildSubmit(),
           ],
         ),
@@ -49,7 +52,9 @@ class _ProjectAddState extends State<ProjectAdd> {
   Widget buildsd(String labelText, String errorMessage) => TextFormField(
         decoration: InputDecoration(
           labelText: labelText,
-          border: OutlineInputBorder(),
+          labelStyle: TextStyle(
+              color: Theme.of(context).inputDecorationTheme.labelStyle!.color),
+          border: const OutlineInputBorder(),
         ),
         validator: (value) {
           // final pattern = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
@@ -65,15 +70,24 @@ class _ProjectAddState extends State<ProjectAdd> {
         },
         // onSaved: (value) => setState(() => contents = value!),
       );
+
   Widget buildAddImage() => ElevatedButton(
       onPressed: () {
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => ProjectImage()));
       },
-      child: Text("Görsel Ekle"));
+      child: const Text("Fotoğraf Ekle"));
+
+  Widget buildAddVideo() => ElevatedButton(
+      onPressed: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProjectVideo()));
+      },
+      child: const Text("Video Ekle"));
+
   Widget buildSubmit() => Builder(
         builder: (context) => ElevatedButton(
-          child: Text('Ekle'),
+          child: const Text('Ekle'),
           onPressed: () {
             final isValid = formKey.currentState!.validate();
             // FocusScope.of(context).unfocus();
@@ -81,10 +95,10 @@ class _ProjectAddState extends State<ProjectAdd> {
             if (isValid) {
               formKey.currentState?.save();
 
-              final message =
+              const message =
                   //   'Username: $projectName\nPassword: $projectIn\nEmail: $konu';
                   "Eklendi";
-              final snackBar = SnackBar(
+              const snackBar = SnackBar(
                 content: Text(
                   message,
                   style: TextStyle(fontSize: 20),
