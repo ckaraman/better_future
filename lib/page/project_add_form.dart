@@ -13,11 +13,13 @@ class _ProjectAddState extends State<ProjectAdd> {
   String projectName = '';
   String konu = '';
   String projectIn = '';
+  String appbarTitle = "Proje Ekleme Formu";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hello Appbar"),
+        title: Text(appbarTitle),
       ),
       body: Form(
         key: formKey,

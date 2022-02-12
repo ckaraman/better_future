@@ -1,5 +1,6 @@
+import 'package:better_future/page/educator_add_form.dart';
 import 'package:better_future/page/project_add_form.dart';
-import 'package:better_future/project_image_add.dart';
+//import 'package:better_future/project_image_add.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ProjectAdd(),
+      home: EducatorAdd(),
     );
   }
 }
