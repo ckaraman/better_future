@@ -1,7 +1,9 @@
+import 'package:better_future/Detail_cards.dart';
 import 'package:better_future/constans/text_style.dart';
 import 'package:better_future/video_items.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:better_future/detail_page.dart';
 
 class DetailPage extends StatelessWidget {
   const DetailPage({Key? key}) : super(key: key);
@@ -27,60 +29,49 @@ class DetailPage extends StatelessWidget {
                 ),
               ),
               Expanded(
-                  child: Container(
-                color: Color.fromARGB(255, 219, 219, 219),
-                child: ListTile(
-                  title: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Proje Adı", style: kTextStyleTitle),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("Afrika'da güneş enerji",
-                            style: kTextStyleComment),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Proje Konusu",
-                          style: kTextStyleTitle,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                            "Afrikada bulunan evime güneş enerjisi koymak istiyorum.",
-                            style: kTextStyleComment),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Proje Detayı",
-                          style: kTextStyleTitle,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                            "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
-                            "Ürünler: Akü, 20 watt panel, dönüştürücü.",
-                            style: kTextStyleComment),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "Proje İçin Gerekli Bütçe",
-                          style: kTextStyleTitle,
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text("Toplam 1000 dolar bütçeye ihtiyacım var",
-                            style: kTextStyleComment),
-                      ]),
+                child: Container(
+                  color: Color.fromARGB(255, 219, 219, 219),
+                  child: ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      itemCount: 1,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                          title: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Detail_cards(
+                                  name: "Proje Adı",
+                                  explanation: "Afrika'da güneş enerji"),
+                              Detail_cards(
+                                  name: "Proje Konusu",
+                                  explanation:
+                                      "Afrikada ki evime güneş enerjisi yapmak istiyorum."),
+                              Detail_cards(
+                                  name: "Proje Detayı",
+                                  explanation:
+                                      "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
+                                      "Ürünler: Akü, 20 watt panel, dönüştürücü."),
+                              Detail_cards(
+                                  name: "Proje İçin Gerekli Bütçe",
+                                  explanation:
+                                      "Toplam 1000 dolar bütçeye ihtiyacım var"),
+                              Center(
+                                child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Colors.grey,
+                                    ),
+                                    onPressed: () {},
+                                    child: Text("BAĞIŞ YAP",
+                                        style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20))),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
                 ),
-              )),
+              ),
             ],
           ),
         ),
