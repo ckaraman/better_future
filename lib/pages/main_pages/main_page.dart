@@ -1,7 +1,7 @@
-import 'package:better_future/page/educator_add_form.dart';
-import 'package:better_future/page/myEducations_page.dart';
-import 'package:better_future/page/myProjects_page.dart';
-import 'package:better_future/page/project_add_form.dart';
+import 'package:better_future/pages/educator_add_form.dart';
+import 'package:better_future/pages/myEducations_page.dart';
+import 'package:better_future/pages/myProjects_page.dart';
+import 'package:better_future/pages/project_add_form.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {

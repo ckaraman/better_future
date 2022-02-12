@@ -1,4 +1,4 @@
-import 'package:better_future/model/project.dart';
+import 'package:better_future/models/project.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class ProjectService {
