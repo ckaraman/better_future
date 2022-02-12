@@ -41,8 +41,7 @@ class _ProjectAddState extends State<ProjectAdd> {
             SizedBox(height: sizedBoxHeight),
             buildsd("Konu", "Konu Giriniz"),
             SizedBox(height: sizedBoxHeight),
-            buildsd("Proje Detayı", "Proje Detay Giriniz"),
-            SizedBox(height: sizedBoxHeight),
+
             buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
             SizedBox(height: sizedBoxHeight),
 

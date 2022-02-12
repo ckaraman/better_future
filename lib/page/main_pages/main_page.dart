@@ -28,8 +28,8 @@ class _MainPageState extends State<MainPage> {
           padding: EdgeInsets.zero,
           children: <Widget>[
             const UserAccountsDrawerHeader(
-              accountName: Text("Hello World"),
-              accountEmail: Text("helloworld@gmail.com"),
+              accountName: Text("Ahmet"),
+              accountEmail: Text("ahmet@gmail.com"),
               currentAccountPicture: CircleAvatar(
                   //backgroundImage: AssetImage("assets/images/beyaz.png"),
                   ),
