@@ -37,11 +37,8 @@ class DetailPage extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          "Afrika'da güneş enerji",
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 82, 82, 82)),
-                        ),
+                        Text("Afrika'da güneş enerji",
+                            style: kTextStyleComment),
                         SizedBox(
                           height: 20,
                         ),
@@ -53,10 +50,8 @@ class DetailPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          "Afrikada bulunan evime güneş enerjisi koymak istiyorum.",
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 82, 82, 82)),
-                        ),
+                            "Afrikada bulunan evime güneş enerjisi koymak istiyorum.",
+                            style: kTextStyleComment),
                         SizedBox(
                           height: 20,
                         ),
@@ -68,11 +63,9 @@ class DetailPage extends StatelessWidget {
                           height: 10,
                         ),
                         Text(
-                          "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
-                          "Ürünler: Akü, 20 watt panel, dönüştürücü.",
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 82, 82, 82)),
-                        ),
+                            "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
+                            "Ürünler: Akü, 20 watt panel, dönüştürücü.",
+                            style: kTextStyleComment),
                         SizedBox(
                           height: 20,
                         ),
@@ -83,11 +76,8 @@ class DetailPage extends StatelessWidget {
                         SizedBox(
                           height: 10,
                         ),
-                        Text(
-                          "Toplam 1000 dolar bütçeye ihtiyacım var",
-                          style:
-                              TextStyle(color: Color.fromARGB(255, 82, 82, 82)),
-                        ),
+                        Text("Toplam 1000 dolar bütçeye ihtiyacım var",
+                            style: kTextStyleComment),
                       ]),
                 ),
               )),
