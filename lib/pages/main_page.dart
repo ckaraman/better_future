@@ -1,6 +1,5 @@
 import 'package:better_future/detail_page.dart';
 import 'package:better_future/pages/forms/educator_add_form.dart';
-import 'package:better_future/pages/list_page.dart';
 import 'package:better_future/pages/login_page.dart';
 import 'package:better_future/pages/myEducations_page.dart';
 import 'package:better_future/pages/myProjects_page.dart';
@@ -26,88 +25,110 @@ class _MainPageState extends State<MainPage> {
         },
         child: const Icon(Icons.add),
       ),*/
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            const UserAccountsDrawerHeader(
-              accountName: Text("Ahmet"),
-              accountEmail: Text("ahmet@gmail.com"),
-              currentAccountPicture: CircleAvatar(
-                  //backgroundImage: AssetImage("assets/images/beyaz.png"),
+      body: DefaultTabController(
+          length: 2, // length of tabs
+          initialIndex: 0,
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                const TabBar(
+                  labelColor: Colors.green,
+                  unselectedLabelColor: Colors.black,
+                  tabs: [
+                    Tab(text: 'perspectives'),
+                    Tab(text: 'subjects'),
+                  ],
+                ),
+                SingleChildScrollView(
+                  child: Container(
+                    height: 566, //height of TabBarView
+                    decoration: const BoxDecoration(
+                        border: Border(
+                            top: BorderSide(color: Colors.grey, width: 0.5))),
+                    child: const TabBarView(children: <Widget>[
+                      MyProjects(),
+                      MyEducations(),
+                    ]),
                   ),
-            ),
-            ListTile(
-              title: const Text('Giriş Yap'),
-              leading: const Icon(Icons.door_back_door_outlined),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const LoginPage()));
-              },
-            ),
-            ListTile(
-              title: const Text('Deneme'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const DetailPage()));
-              },
-              leading: const Icon(Icons.person),
-            ),
-            ListTile(
-              title: const Text('Proje Ekle'),
-              leading: const Icon(Icons.home),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProjectAdd()));
-              },
-            ),
-            ListTile(
-              title: const Text('Eğitmen Ol'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const EducatorAdd()));
-              },
-              leading: const Icon(Icons.person),
-            ),
-            ListTile(
-              title: const Text('Eğitimlerim'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyEducations()));
-              },
-              leading: const Icon(Icons.person),
-            ),
-            ListTile(
-              title: const Text('Projelerim'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const MyProjects()));
-              },
-              leading: const Icon(Icons.person),
-            ),
-            const Divider(),
-            ListTile(
-              title: const Text('Çıkış yap'),
-              onTap: () {
-                //  _authService.signOut();
-                Navigator.pop(context);
-              },
-              leading: const Icon(Icons.remove_circle),
-            ),
-          ],
-        ),
+                ),
+              ])),
+      drawer: buildDrawer(context),
+    );
+  }
+
+  Widget buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: <Widget>[
+          const UserAccountsDrawerHeader(
+            accountName: Text("Ahmet"),
+            accountEmail: Text("ahmet@gmail.com"),
+            currentAccountPicture: CircleAvatar(
+                //backgroundImage: AssetImage("assets/images/beyaz.png"),
+                ),
+          ),
+          ListTile(
+            title: const Text('Giriş Yap'),
+            leading: const Icon(Icons.door_back_door_outlined),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()));
+            },
+          ),
+          ListTile(
+            title: const Text('Deneme'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const DetailPage()));
+            },
+            leading: const Icon(Icons.person),
+          ),
+          ListTile(
+            title: const Text('Proje Ekle'),
+            leading: const Icon(Icons.home),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const ProjectAdd()));
+            },
+          ),
+          ListTile(
+            title: const Text('Eğitmen Ol'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const EducatorAdd()));
+            },
+            leading: const Icon(Icons.person),
+          ),
+          ListTile(
+            title: const Text('Eğitimlerim'),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MyEducations()));
+            },
+            leading: const Icon(Icons.person),
+          ),
+          ListTile(
+            title: const Text('Projelerim'),
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MyProjects()));
+            },
+            leading: const Icon(Icons.person),
+          ),
+          const Divider(),
+          ListTile(
+            title: const Text('Çıkış yap'),
+            onTap: () {
+              //  _authService.signOut();
+              Navigator.pop(context);
+            },
+            leading: const Icon(Icons.remove_circle),
+          ),
+        ],
       ),
-      body: const ListPage(),
     );
   }
 }

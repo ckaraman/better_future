@@ -1,3 +1,4 @@
+import 'package:better_future/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:io';
@@ -71,11 +72,19 @@ class _ProjectImageState extends State<ProjectImage>
             const SizedBox(
               height: 100,
             ),
-            buildText('Upload Your File', 25, Colors.grey.shade800),
+            Build_Text(
+                fontWeight: FontWeight.normal,
+                string: 'Upload Your File',
+                fontsize: 25,
+                colors: Colors.grey.shade800),
             const SizedBox(
               height: 10,
             ),
-            buildText('File should be jpeg png', 15, Colors.grey.shade500),
+            Build_Text(
+                fontWeight: FontWeight.normal,
+                string: 'File should be jpeg png',
+                fontsize: 15,
+                colors: Colors.grey.shade500),
             const SizedBox(
               height: 20,
             ),
@@ -107,7 +116,11 @@ class _ProjectImageState extends State<ProjectImage>
                           const SizedBox(
                             height: 15,
                           ),
-                          buildText('Select You File', 15, Colors.grey.shade400)
+                          Build_Text(
+                              fontWeight: FontWeight.normal,
+                              string: 'Select You File',
+                              fontsize: 15,
+                              colors: Colors.grey.shade400)
                         ],
                       ),
                     ),
@@ -119,7 +132,11 @@ class _ProjectImageState extends State<ProjectImage>
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        buildText('Select File', 15, Colors.grey.shade400),
+                        Build_Text(
+                            fontWeight: FontWeight.normal,
+                            string: 'Select File',
+                            fontsize: 15,
+                            colors: Colors.grey.shade400),
                         const SizedBox(
                           height: 10,
                         ),
@@ -152,15 +169,20 @@ class _ProjectImageState extends State<ProjectImage>
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      buildText(
-                                          _platformFile!.name, 13, Colors.red),
+                                      Build_Text(
+                                          fontWeight: FontWeight.normal,
+                                          string: _platformFile!.name,
+                                          fontsize: 13,
+                                          colors: Colors.red),
                                       const SizedBox(
                                         height: 5,
                                       ),
-                                      buildText(
-                                          '${_platformFile!.size / 1024.ceil()} KB',
-                                          13,
-                                          Colors.grey.shade500),
+                                      Build_Text(
+                                          fontWeight: FontWeight.normal,
+                                          string:
+                                              '${_platformFile!.size / 1024.ceil()} KB',
+                                          fontsize: 13,
+                                          colors: Colors.grey.shade500),
                                       const SizedBox(
                                         height: 5,
                                       ),
@@ -204,17 +226,6 @@ class _ProjectImageState extends State<ProjectImage>
             ),
           ],
         ),
-      ),
-    );
-  }
-
-  Text buildText(String string, double fontsize, Color colors) {
-    return Text(
-      string,
-      style: TextStyle(
-        fontSize: fontsize,
-        color: colors,
-        fontWeight: FontWeight.bold,
       ),
     );
   }

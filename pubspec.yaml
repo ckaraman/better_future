@@ -1,28 +1,23 @@
 name: better_future
 description: A new Flutter project.
 
-
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
-
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
 
 environment:
   sdk: ">=2.16.0 <3.0.0"
 
-
 dependencies:
   flutter:
     sdk: flutter
-  
+
   #FireBase packages
   cloud_firestore: ^3.1.8
   firebase_auth: ^3.3.7
   firebase_core: ^1.4.0
   firebase_storage: ^10.0.1
-  video_player: ^2.2.18  
-  
-
+  video_player: ^2.2.18
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -39,22 +34,16 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  
-
 
   flutter_lints: ^1.0.0
 
-
 flutter:
-
- 
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/
     - assets/logo.jpeg
-    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
