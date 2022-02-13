@@ -27,14 +27,18 @@ class DetailPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
-              height: 250,
-              child: VideoItems(
-                videoPlayerController:
-                    VideoPlayerController.asset("assets/video_1.mp4"),
-              ),
-              decoration: const BoxDecoration(
-                color: Colors.white,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                height: 250,
+                child: VideoItems(
+                  videoPlayerController:
+                      VideoPlayerController.asset("assets/video_1.mp4"),
+                ),
               ),
             ),
             Expanded(
@@ -49,6 +53,11 @@ class DetailPage extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Detail_cards(
+                              projectSubject:
+                                  "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
+                                  "Ürünler: Akü, 20 watt panel, dönüştürücü.",
+                              projectName: "Afrika'da güneş enerji")
+                          /*   Detail_cards(
                               name: "Proje Adı",
                               explanation: "Afrika'da güneş enerji"),
                           Detail_cards(
@@ -63,7 +72,8 @@ class DetailPage extends StatelessWidget {
                           Detail_cards(
                               name: "Proje İçin Gerekli Bütçe",
                               explanation:
-                                  "Toplam 1000 dolar bütçeye ihtiyacım var"),
+                                  "Toplam 1000 dolar bütçeye ihtiyacım var"),*/
+                          ,
                           const SizedBox(
                             height: 30,
                           ),

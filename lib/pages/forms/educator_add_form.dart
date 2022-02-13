@@ -73,7 +73,8 @@ class _EducatorAddState extends State<EducatorAdd> {
             buildsd("Hangi Günler Eğitim Verebilirsiniz?",
                 "Telefon Numarası Giriniz"),
             SizedBox(height: sizedBoxHeight),
-            buildsd("Proje İçin Gereken Bütçe", "Bütçe Giriniz"),
+            buildsd("Eğitimden gelir bekliyor musunuz?",
+                "İstemiyorsanız - bırakınız"),
 
             SizedBox(height: sizedBoxHeight),
             buildSubmit(),

@@ -1,3 +1,4 @@
+import 'package:better_future/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class MyProjects extends StatefulWidget {
@@ -29,35 +30,41 @@ class _MyProjectsState extends State<MyProjects> {
         title: Text(appBarTitle),
       ),
       body: ListView.builder(
-          itemCount: profilList.length,
+          itemCount: 5,
           itemBuilder: (context, indeks) {
             return SizedBox(
               height: 80,
               child: GestureDetector(
                 onTap: () {
-                  /*Navigator.push(
+                  Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AramaSayfasi()),
-                  );*/
+                    MaterialPageRoute(builder: (context) => const DetailPage()),
+                  );
                 },
-                child: Card(
-                  child: Row(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.architecture,
-                          size: 35,
-                        ),
+                child: Column(
+                  children: [
+                    //Detail_cards(
+                    //     projectName: "sdfsd", projectSubject: "sdfgsfd"),
+                    Card(
+                      child: Row(
+                        children: [
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Icon(
+                              Icons.architecture,
+                              size: 35,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 22,
+                          ),
+                          Text(profilList[indeks]),
+                          const Spacer(),
+                          const Icon(Icons.arrow_right),
+                        ],
                       ),
-                      const SizedBox(
-                        width: 22,
-                      ),
-                      Text(profilList[indeks]),
-                      const Spacer(),
-                      const Icon(Icons.arrow_right),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             );
