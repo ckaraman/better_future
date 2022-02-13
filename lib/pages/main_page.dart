@@ -1,3 +1,4 @@
+import 'package:better_future/detail_page.dart';
 import 'package:better_future/pages/forms/educator_add_form.dart';
 import 'package:better_future/pages/list_page.dart';
 import 'package:better_future/pages/login_page.dart';
@@ -43,6 +44,16 @@ class _MainPageState extends State<MainPage> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const LoginPage()));
               },
+            ),
+            ListTile(
+              title: const Text('Deneme'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const DetailPage()));
+              },
+              leading: const Icon(Icons.person),
             ),
             ListTile(
               title: const Text('Proje Ekle'),
@@ -96,7 +107,7 @@ class _MainPageState extends State<MainPage> {
           ],
         ),
       ),
-      body: ListPage(),
+      body: const ListPage(),
     );
   }
 }

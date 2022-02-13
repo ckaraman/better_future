@@ -10,7 +10,7 @@ class Detail_cards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Color.fromARGB(255, 219, 219, 219),
+      color: Colors.white,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -18,14 +18,14 @@ class Detail_cards extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             child: Text(name, style: kTextStyleTitle),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Text(explanation, style: kTextStyleComment),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
         ],

@@ -17,7 +17,6 @@ class _VideoItemsState extends State<VideoItems> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _chewieController = ChewieController(
         videoPlayerController: widget.videoPlayerController,
@@ -32,7 +31,6 @@ class _VideoItemsState extends State<VideoItems> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _chewieController.dispose();
   }
