@@ -25,12 +25,12 @@ class _EducationsPageState extends State<EducationsPage> {
           "http://wonderfulengineering.com/wp-content/uploads/2014/09/wind-turbine-pictures-2.jpg",
     },
     {
-      'title': 'Hidro Enerji',
+      'title': 'Hidroelektrik Enerji',
       'image':
           'https://media.istockphoto.com/photos/seebe-hydroelectric-dam-near-exshaw-at-night-picture-id687333564?k=20&m=687333564&s=612x612&w=0&h=0ccqKUw3sGCG7PacdyKZGUJfwTk1Y3w8lp7dg4EKbk8=',
     },
     {
-      'title': 'Termo Enerji',
+      'title': 'Jeotermal Enerji',
       'image':
           'https://www.enerjiportali.com/wp-content/uploads/2019/03/termik-santral10.png',
     },
