@@ -22,7 +22,7 @@ class Detail_cards extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             child: Build_Text(
               string: "Proje Adı",
-              colors: Colors.black,
+              colors: const Color(0xff176ADE),
               fontsize: 20,
               fontWeight: FontWeight.normal,
             ),
@@ -46,7 +46,7 @@ class Detail_cards extends StatelessWidget {
             padding: const EdgeInsets.only(left: 10),
             child: Build_Text(
               string: "Proje Konusu",
-              colors: Colors.black,
+              colors: const Color(0xff176ADE),
               fontsize: 20,
               fontWeight: FontWeight.normal,
             ),

@@ -1,4 +1,3 @@
-import 'package:better_future/detail_page.dart';
 import 'package:flutter/material.dart';
 
 class MyProjects extends StatefulWidget {
@@ -10,6 +9,8 @@ class MyProjects extends StatefulWidget {
 
 class _MyProjectsState extends State<MyProjects> {
   String appBarTitle = "Projelerim";
+  final String _url =
+      "https://www.eltech.com.tr/wp-content/uploads/2019/04/solar-panel.png";
 
   @override
   Widget build(BuildContext context) {
@@ -29,41 +30,24 @@ class _MyProjectsState extends State<MyProjects> {
       appBar: AppBar(
         title: Text(appBarTitle),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+          shrinkWrap: true,
           itemCount: 5,
-          itemBuilder: (context, indeks) {
-            return SizedBox(
-              height: 80,
-              child: GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const DetailPage()),
-                  );
-                },
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, childAspectRatio: 1 / 1.3),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 8,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    //Detail_cards(
-                    //     projectName: "sdfsd", projectSubject: "sdfgsfd"),
-                    Card(
-                      child: Row(
-                        children: [
-                          const Padding(
-                            padding: EdgeInsets.all(8.0),
-                            child: Icon(
-                              Icons.architecture,
-                              size: 35,
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 22,
-                          ),
-                          Text(profilList[indeks]),
-                          const Spacer(),
-                          const Icon(Icons.arrow_right),
-                        ],
-                      ),
+                    Expanded(child: Image.network(_url, fit: BoxFit.fill)),
+                    const SizedBox(
+                      height: 15,
                     ),
+                    const Text("Güneş Enerjisi"),
                   ],
                 ),
               ),

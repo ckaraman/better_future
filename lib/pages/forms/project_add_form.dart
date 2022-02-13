@@ -55,8 +55,8 @@ class _ProjectAddState extends State<ProjectAdd> {
               title: const Text("Parasal Destek! "),
               value: giveMoney,
               controlAffinity: ListTileControlAffinity.leading,
-              checkColor: Colors.red,
-              activeColor: Colors.deepPurple,
+              checkColor: const Color(0xff45A1FF),
+              activeColor: Colors.white,
               onChanged: (bool? val) {
                 setState(() {
                   giveMoney = val!;
@@ -67,8 +67,8 @@ class _ProjectAddState extends State<ProjectAdd> {
               title: const Text("Hammade veya Proje Yardımı"),
               value: giveResource,
               controlAffinity: ListTileControlAffinity.leading,
-              checkColor: Colors.red,
-              activeColor: Colors.deepPurple,
+              checkColor: const Color(0xff45A1FF),
+              activeColor: Colors.white,
               onChanged: (bool? val) {
                 setState(() {
                   giveResource = val!;
@@ -93,8 +93,7 @@ class _ProjectAddState extends State<ProjectAdd> {
         controller: controller,
         decoration: InputDecoration(
           labelText: labelText,
-          labelStyle: TextStyle(
-              color: Theme.of(context).inputDecorationTheme.labelStyle!.color),
+          labelStyle: const TextStyle(color: Colors.black45),
           border: const OutlineInputBorder(),
         ),
         validator: (value) {
@@ -121,8 +120,8 @@ class _ProjectAddState extends State<ProjectAdd> {
 
   Widget buildAddVideo() => ElevatedButton(
       onPressed: () {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ProjectVideo()));
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProjectVideo()));
       },
       child: const Text("Video Ekle"));
 

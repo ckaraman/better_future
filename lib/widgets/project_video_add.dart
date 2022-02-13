@@ -56,14 +56,22 @@ class _ProjectVideoState extends State<ProjectVideo>
         child: Column(
           children: <Widget>[
             const SizedBox(
-              height: 100,
-            ),
-            /* Image.network(
-              _image,
-              width: 300,
-            ),*/
-            const SizedBox(
               height: 50,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  right: MediaQuery.of(context).size.width / 1.2),
+              child: IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(
+                    Icons.arrow_back,
+                    color: Colors.black,
+                  )),
+            ),
+            const SizedBox(
+              height: 100,
             ),
             Text(
               'Upload your file',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 TextStyle kTextStyleTitle = const TextStyle(
-    color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold);
+    color: Colors.white, fontSize: 16, fontWeight: FontWeight.normal);
 TextStyle kTextStyleComment = const TextStyle(
     color: Color.fromARGB(
   255,

@@ -1,3 +1,4 @@
+import 'package:better_future/detail_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
@@ -40,17 +41,25 @@ class _ProjectListPageState extends State<ProjectListPage> {
                   var docRef = snapshot.data!.docs[index];
                   return Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Card(
-                      elevation: 8,
-                      child: Column(
-                        children: [
-                          Expanded(
-                              child: Image.network(_url, fit: BoxFit.fill)),
-                          const SizedBox(
-                            height: 15,
-                          ),
-                          Text(docRef['projectName']),
-                        ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const DetailPage()));
+                      },
+                      child: Card(
+                        elevation: 8,
+                        child: Column(
+                          children: [
+                            Expanded(
+                                child: Image.network(_url, fit: BoxFit.fill)),
+                            const SizedBox(
+                              height: 15,
+                            ),
+                            Text(docRef['projectName']),
+                          ],
+                        ),
                       ),
                     ),
                   );
