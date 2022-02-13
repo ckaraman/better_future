@@ -1,7 +1,7 @@
-import 'package:better_future/custom_dialog.dart';
+import 'package:better_future/widgets/custom_dialog.dart';
 import 'package:better_future/widgets/detail_cards.dart';
 import 'package:better_future/constans/text_style.dart';
-import 'package:better_future/video_items.dart';
+import 'package:better_future/widgets/video_items.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -59,24 +59,7 @@ class DetailPage extends StatelessWidget {
                               projectSubject:
                                   "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
                                   "Ürünler: Akü, 20 watt panel, dönüştürücü.",
-                              projectName: "Afrika'da güneş enerji")
-                          /*   Detail_cards(
-                              name: "Proje Adı",
-                              explanation: "Afrika'da güneş enerji"),
-                          Detail_cards(
-                              name: "Proje Konusu",
-                              explanation:
-                                  "Afrikada ki evime güneş enerjisi yapmak istiyorum."),
-                          Detail_cards(
-                              name: "Proje Detayı",
-                              explanation:
-                                  "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
-                                  "Ürünler: Akü, 20 watt panel, dönüştürücü."),
-                          Detail_cards(
-                              name: "Proje İçin Gerekli Bütçe",
-                              explanation:
-                                  "Toplam 1000 dolar bütçeye ihtiyacım var"),*/
-                          ,
+                              projectName: "Afrika'da güneş enerji"),
                           const SizedBox(
                             height: 30,
                           ),

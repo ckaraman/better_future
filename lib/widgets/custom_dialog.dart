@@ -58,7 +58,7 @@ class CustomDialog extends StatelessWidget {
               alignment: Alignment.bottomRight,
               child: TextButton(
                 child: const Text(
-                  "Okey",
+                  "Teşekkürler!! :)",
                   style: TextStyle(color: Colors.black),
                 ),
                 onPressed: () {

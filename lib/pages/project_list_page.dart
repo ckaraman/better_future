@@ -1,4 +1,4 @@
-import 'package:better_future/detail_page.dart';
+import 'package:better_future/pages/detail_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
