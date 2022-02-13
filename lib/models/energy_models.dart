@@ -6,10 +6,10 @@ class Energys {
 
   static List<Energys> getCompanies() {
     return <Energys>[
-      Energys(1, 'Hydroelectricity'),
-      Energys(2, 'Wind power '),
-      Energys(3, 'Solar energy '),
-      Energys(4, 'Geothermal power'),
+      Energys(1, 'Hidroelektrik Enerjisi'),
+      Energys(2, 'Rüzgar Enerjisi '),
+      Energys(3, 'Güneş Enerjisi'),
+      Energys(4, 'Jeotermal Enerji'),
     ];
   }
 }

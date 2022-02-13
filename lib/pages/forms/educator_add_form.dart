@@ -55,13 +55,11 @@ class _EducatorAddState extends State<EducatorAdd> {
       ),
       body: Form(
         key: formKey,
-        //autovalidateMode: AutovalidateMode.onUserInteraction,
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
             buildAddPhoto(),
             SizedBox(height: sizedBoxHeight),
-
             buildsd("Name-Surname", "Name-Surname Giriniz"),
             SizedBox(height: sizedBoxHeight),
             buildsd("Yaşınız", "Yaş Giriniz"),
@@ -75,12 +73,8 @@ class _EducatorAddState extends State<EducatorAdd> {
             SizedBox(height: sizedBoxHeight),
             buildsd("Eğitimden gelir bekliyor musunuz?",
                 "İstemiyorsanız - bırakınız"),
-
             SizedBox(height: sizedBoxHeight),
             buildSubmit(),
-            // buildPassword(),
-            // const SizedBox(height: 32),
-            // buildAddImage(),
           ],
         ),
       ),
@@ -93,18 +87,12 @@ class _EducatorAddState extends State<EducatorAdd> {
           border: const OutlineInputBorder(),
         ),
         validator: (value) {
-          // final pattern = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
-          //final regExp = RegExp(pattern);
-
           if (value!.isEmpty) {
             return errorMessage;
-          } //else if (!regExp.hasMatch(value)) {
-          // return 'Enter a valid email';}
-          else {
+          } else {
             return null;
           }
         },
-        // onSaved: (value) => setState(() => contents = value!),
       );
 
   Widget buildAddImage() => ElevatedButton(
@@ -143,14 +131,11 @@ class _EducatorAddState extends State<EducatorAdd> {
           child: const Text('Ekle'),
           onPressed: () {
             final isValid = formKey.currentState!.validate();
-            // FocusScope.of(context).unfocus();
 
             if (isValid) {
               formKey.currentState?.save();
 
-              const message =
-                  //   'Username: $projectName\nPassword: $projectIn\nEmail: $konu';
-                  "Eklendi";
+              const message = "Eklendi";
               const snackBar = SnackBar(
                 content: Text(
                   message,

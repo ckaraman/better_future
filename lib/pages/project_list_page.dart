@@ -57,7 +57,10 @@ class _ProjectListPageState extends State<ProjectListPage> {
                             const SizedBox(
                               height: 15,
                             ),
-                            Text(docRef['projectName']),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(docRef['projectName']),
+                            ),
                           ],
                         ),
                       ),

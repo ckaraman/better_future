@@ -60,8 +60,9 @@ class _MainPageState extends State<MainPage> {
             accountName: Text("Ahmet"),
             accountEmail: Text("ahmet@gmail.com"),
             currentAccountPicture: CircleAvatar(
-                //backgroundImage: AssetImage("assets/images/beyaz.png"),
-                ),
+              backgroundColor: Colors.white,
+              backgroundImage: AssetImage("assets/logo1.png"),
+            ),
           ),
           ListTile(
             title: const Text('Giriş Yap'),
@@ -73,7 +74,7 @@ class _MainPageState extends State<MainPage> {
           ),
           ListTile(
             title: const Text('Proje Ekle'),
-            leading: const Icon(Icons.home),
+            leading: const Icon(Icons.add_comment_outlined),
             onTap: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const ProjectAdd()));
@@ -85,7 +86,7 @@ class _MainPageState extends State<MainPage> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const EducatorAdd()));
             },
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.person_add_outlined),
           ),
           ListTile(
             title: const Text('Eğitimlerim'),
@@ -95,7 +96,7 @@ class _MainPageState extends State<MainPage> {
                   MaterialPageRoute(
                       builder: (context) => const MyEducations()));
             },
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.bookmark_add_outlined),
           ),
           ListTile(
             title: const Text('Projelerim'),
@@ -103,7 +104,7 @@ class _MainPageState extends State<MainPage> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const MyProjects()));
             },
-            leading: const Icon(Icons.person),
+            leading: const Icon(Icons.architecture),
           ),
           const Divider(),
           ListTile(

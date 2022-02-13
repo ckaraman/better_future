@@ -60,12 +60,11 @@ class _EducationRegisterFormState extends State<EducationRegisterForm> {
             return null;
           }
         },
-        // onSaved: (value) => setState(() => contents = value!),
       );
 
   Widget buildSubmit() => Builder(
         builder: (context) => ElevatedButton(
-          child: const Text('Eğitimi Rezerve Et'),
+          child: const Text('Eğitime Kayıt Ol'),
           onPressed: () {
             final isValid = formKey.currentState!.validate();
             // FocusScope.of(context).unfocus();

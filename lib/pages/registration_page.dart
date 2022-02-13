@@ -176,7 +176,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     final signUpButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: const Color(0xff176ADE),
       child: MaterialButton(
           padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -213,7 +213,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.red),
+          icon: const Icon(Icons.arrow_back, color: Color(0xff176ADE)),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -225,7 +225,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
           child: Container(
             color: Colors.white,
             child: Padding(
-              padding: const EdgeInsets.all(36.0),
+              padding: const EdgeInsets.all(20.0),
               child: Form(
                 key: _formKey,
                 child: Column(
@@ -233,9 +233,9 @@ class _RegistrationPageState extends State<RegistrationPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                        height: 180,
+                        height: 200,
                         child: Image.asset(
-                          "assets/logo.jpeg",
+                          "assets/logo2.png",
                           fit: BoxFit.contain,
                         )),
                     const SizedBox(height: 45),

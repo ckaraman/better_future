@@ -49,7 +49,7 @@ class _EducationsPageState extends State<EducationsPage> {
         child: Stack(
           fit: StackFit.expand,
           children: [
-            Image.network(_pages[_current]['image'], fit: BoxFit.fill),
+            //Image.network(_pages[_current]['image'], fit: BoxFit.fill),
             Positioned(
               top: 0,
               left: 0,
