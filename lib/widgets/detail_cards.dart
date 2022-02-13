@@ -1,11 +1,15 @@
+import 'package:better_future/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:better_future/constans/text_style.dart';
 
 class Detail_cards extends StatelessWidget {
-  String name;
-  String explanation;
+  String projectName;
 
-  Detail_cards({required this.name, required this.explanation});
+  String projectSubject;
+
+  Detail_cards({
+    required this.projectName,
+    required this.projectSubject,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,18 +20,42 @@ class Detail_cards extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 10),
-            child: Text(name, style: kTextStyleTitle),
+            child: Build_Text(
+              string: "Proje Adı",
+              colors: Colors.black,
+              fontsize: 20,
+              fontWeight: FontWeight.normal,
+            ),
           ),
           const SizedBox(
             height: 10,
           ),
+          Build_Text(
+              fontsize: 12,
+              colors: const Color.fromARGB(255, 82, 82, 82),
+              string: projectName,
+              fontWeight: FontWeight.normal),
+          const SizedBox(
+            height: 10,
+          ),
+          const Divider(height: 15, thickness: 2.0),
           Padding(
             padding: const EdgeInsets.only(left: 10),
-            child: Text(explanation, style: kTextStyleComment),
+            child: Build_Text(
+              string: "Proje Konusu",
+              colors: Colors.black,
+              fontsize: 20,
+              fontWeight: FontWeight.normal,
+            ),
           ),
           const SizedBox(
-            height: 20,
+            height: 10,
           ),
+          Build_Text(
+              fontsize: 12,
+              colors: const Color.fromARGB(255, 82, 82, 82),
+              string: projectSubject,
+              fontWeight: FontWeight.normal),
         ],
       ),
     );
