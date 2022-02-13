@@ -4,6 +4,8 @@ import 'package:better_future/pages/login_page.dart';
 import 'package:better_future/pages/myEducations_page.dart';
 import 'package:better_future/pages/myProjects_page.dart';
 import 'package:better_future/pages/forms/project_add_form.dart';
+import 'package:better_future/pages/project_list_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -13,45 +15,54 @@ class MainPage extends StatefulWidget {
   _MainPageState createState() => _MainPageState();
 }
 
+CollectionReference ref = FirebaseFirestore.instance.collection('Project');
+
 class _MainPageState extends State<MainPage> {
+  // final List _projects = [];
+
+  // getUserProjects() async {
+  //   await FirebaseFirestore.instance
+  //       .collection('Poreject')
+  //       .doc()
+  //       .get()
+  //       .then((value) {
+  //     if (mounted) {
+  //       setState(() {
+  //         _MainPageState
+  //       });
+  //     }
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      /*   floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Navigator.push(context,
-          //  MaterialPageRoute(builder: (context) => AddStatusPage()));
-        },
-        child: const Icon(Icons.add),
-      ),*/
       body: DefaultTabController(
-          length: 2, // length of tabs
-          initialIndex: 0,
-          child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                const TabBar(
-                  labelColor: Colors.green,
-                  unselectedLabelColor: Colors.black,
-                  tabs: [
-                    Tab(text: 'perspectives'),
-                    Tab(text: 'subjects'),
+        length: 2, // length of tabs
+        initialIndex: 0,
+
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: const <Widget>[
+              TabBar(
+                labelColor: Colors.green,
+                unselectedLabelColor: Colors.black,
+                tabs: [
+                  Tab(text: 'Projects'),
+                  Tab(text: 'Educations'),
+                ],
+              ),
+              Expanded(
+                child: TabBarView(
+                  children: <Widget>[
+                    ProjectListPage(),
+                    MyEducations(),
                   ],
                 ),
-                SingleChildScrollView(
-                  child: Container(
-                    height: 566, //height of TabBarView
-                    decoration: const BoxDecoration(
-                        border: Border(
-                            top: BorderSide(color: Colors.grey, width: 0.5))),
-                    child: const TabBarView(children: <Widget>[
-                      MyProjects(),
-                      MyEducations(),
-                    ]),
-                  ),
-                ),
-              ])),
+              ),
+            ]),
+      ),
       drawer: buildDrawer(context),
     );
   }

@@ -2,11 +2,11 @@ import 'package:better_future/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 
 class Detail_cards extends StatelessWidget {
-  String projectName;
+  final String projectName;
 
-  String projectSubject;
+  final String projectSubject;
 
-  Detail_cards({
+  const Detail_cards({
     required this.projectName,
     required this.projectSubject,
   });
@@ -30,15 +30,18 @@ class Detail_cards extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Build_Text(
-              fontsize: 12,
-              colors: const Color.fromARGB(255, 82, 82, 82),
-              string: projectName,
-              fontWeight: FontWeight.normal),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Build_Text(
+                fontsize: 12,
+                colors: const Color.fromARGB(255, 82, 82, 82),
+                string: projectName,
+                fontWeight: FontWeight.normal),
+          ),
           const SizedBox(
             height: 10,
           ),
-          const Divider(height: 15, thickness: 2.0),
+          const Divider(indent: 10, endIndent: 10, height: 15, thickness: 2.0),
           Padding(
             padding: const EdgeInsets.only(left: 10),
             child: Build_Text(
@@ -51,11 +54,14 @@ class Detail_cards extends StatelessWidget {
           const SizedBox(
             height: 10,
           ),
-          Build_Text(
-              fontsize: 12,
-              colors: const Color.fromARGB(255, 82, 82, 82),
-              string: projectSubject,
-              fontWeight: FontWeight.normal),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+            child: Build_Text(
+                fontsize: 12,
+                colors: const Color.fromARGB(255, 82, 82, 82),
+                string: projectSubject,
+                fontWeight: FontWeight.normal),
+          ),
         ],
       ),
     );
