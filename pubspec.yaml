@@ -30,6 +30,7 @@ dependencies:
   fluttertoast: ^8.0.8
   image_picker: ^0.8.3+2
   chewie: ^1.2.2
+  carousel_slider: ^4.0.0
 
 dev_dependencies:
   flutter_test:

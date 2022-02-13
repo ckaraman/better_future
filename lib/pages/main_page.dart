@@ -1,4 +1,4 @@
-import 'package:better_future/detail_page.dart';
+import 'package:better_future/pages/educations_page.dart';
 import 'package:better_future/pages/forms/educator_add_form.dart';
 import 'package:better_future/pages/login_page.dart';
 import 'package:better_future/pages/myEducations_page.dart';
@@ -18,22 +18,6 @@ class MainPage extends StatefulWidget {
 CollectionReference ref = FirebaseFirestore.instance.collection('Project');
 
 class _MainPageState extends State<MainPage> {
-  // final List _projects = [];
-
-  // getUserProjects() async {
-  //   await FirebaseFirestore.instance
-  //       .collection('Poreject')
-  //       .doc()
-  //       .get()
-  //       .then((value) {
-  //     if (mounted) {
-  //       setState(() {
-  //         _MainPageState
-  //       });
-  //     }
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,7 +41,7 @@ class _MainPageState extends State<MainPage> {
                 child: TabBarView(
                   children: <Widget>[
                     ProjectListPage(),
-                    MyEducations(),
+                    EducationsPage(),
                   ],
                 ),
               ),
@@ -86,14 +70,6 @@ class _MainPageState extends State<MainPage> {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const LoginPage()));
             },
-          ),
-          ListTile(
-            title: const Text('Deneme'),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const DetailPage()));
-            },
-            leading: const Icon(Icons.person),
           ),
           ListTile(
             title: const Text('Proje Ekle'),
