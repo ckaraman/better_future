@@ -1,5 +1,4 @@
 import 'package:better_future/pages/main_page.dart';
-import 'package:better_future/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -15,8 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(primaryColor: const Color(0xff176ADE)),
       title: 'Email And Password Login',
-      theme: AppThemes.lightTheme,
       debugShowCheckedModeBanner: false,
       home: const MainPage(),
     );

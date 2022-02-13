@@ -9,6 +9,7 @@ class MyEducations extends StatefulWidget {
 
 class _MyEducationsState extends State<MyEducations> {
   String appBarTitle = "Eğitimlerim";
+  final String _url = "https://wallpaperaccess.com/full/1663640.jpg";
 
   @override
   Widget build(BuildContext context) {
@@ -28,36 +29,25 @@ class _MyEducationsState extends State<MyEducations> {
       appBar: AppBar(
         title: Text(appBarTitle),
       ),
-      body: ListView.builder(
-          itemCount: profilList.length,
-          itemBuilder: (context, indeks) {
-            return SizedBox(
-              height: 80,
-              child: GestureDetector(
-                onTap: () {
-                  /*Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AramaSayfasi()),
-                  );*/
-                },
-                child: Card(
-                  child: Row(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(
-                          Icons.cast_for_education,
-                          size: 35,
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 22,
-                      ),
-                      Text(profilList[indeks]),
-                      const Spacer(),
-                      const Icon(Icons.arrow_right),
-                    ],
-                  ),
+      body: GridView.builder(
+          shrinkWrap: true,
+          itemCount: 5,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, childAspectRatio: 1 / 1.3),
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Card(
+                elevation: 8,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Expanded(child: Image.network(_url, fit: BoxFit.fill)),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Text("Güneş Enerjisi Başlangıç Eğitimi"),
+                  ],
                 ),
               ),
             );

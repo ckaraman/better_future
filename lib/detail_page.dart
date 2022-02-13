@@ -31,7 +31,7 @@ class DetailPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
               child: Container(
                 decoration: BoxDecoration(
-                  color: Colors.black,
+                  color: Colors.blueGrey,
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 height: 250,
@@ -40,6 +40,9 @@ class DetailPage extends StatelessWidget {
                       VideoPlayerController.asset("assets/video_1.mp4"),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 13,
             ),
             Expanded(
               child: Container(
@@ -52,7 +55,7 @@ class DetailPage extends StatelessWidget {
                       title: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Detail_cards(
+                          const Detail_cards(
                               projectSubject:
                                   "Evime güneş enerjisi paneli eklemek için ihtiyacım olan bazı ürünler için yardım istiyorum."
                                   "Ürünler: Akü, 20 watt panel, dönüştürücü.",
@@ -80,7 +83,7 @@ class DetailPage extends StatelessWidget {
                           Center(
                             child: ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                primary: Colors.white,
+                                primary: const Color(0xff176ADE),
                               ),
                               onPressed: () {
                                 showDialog(

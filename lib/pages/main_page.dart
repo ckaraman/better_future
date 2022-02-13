@@ -30,11 +30,11 @@ class _MainPageState extends State<MainPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: const <Widget>[
               TabBar(
-                labelColor: Colors.green,
+                labelColor: Colors.black,
                 unselectedLabelColor: Colors.black,
                 tabs: [
-                  Tab(text: 'Projects'),
-                  Tab(text: 'Educations'),
+                  Tab(text: 'Projeler'),
+                  Tab(text: 'Eğitimler'),
                 ],
               ),
               Expanded(

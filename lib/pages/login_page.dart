@@ -89,7 +89,7 @@ class _LoginPageState extends State<LoginPage> {
     final loginButton = Material(
       elevation: 5,
       borderRadius: BorderRadius.circular(30),
-      color: Colors.redAccent,
+      color: const Color(0xff176ADE),
       child: MaterialButton(
           padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
           minWidth: MediaQuery.of(context).size.width,
@@ -129,9 +129,9 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                        height: 200,
+                        height: 300,
                         child: Image.asset(
-                          "assets/logo.jpeg",
+                          "assets/logo2.png",
                           fit: BoxFit.contain,
                         )),
                     const SizedBox(height: 45),
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: const Text(
                               "SignUp",
                               style: TextStyle(
-                                  color: Colors.redAccent,
+                                  color: Color(0xff45A1FF),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 15),
                             ),
