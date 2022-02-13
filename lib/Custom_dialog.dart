@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class CustomDialog extends StatelessWidget {
   final String title, description;
 
-  CustomDialog({
+  const CustomDialog({
     required this.title,
     required this.description,
   });
@@ -22,18 +22,18 @@ class CustomDialog extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 100,
             bottom: 16,
             left: 16,
             right: 16,
           ),
-          margin: EdgeInsets.only(top: 16),
+          margin: const EdgeInsets.only(top: 16),
           decoration: BoxDecoration(
-              color: Color.fromARGB(255, 219, 219, 219),
+              color: const Color.fromARGB(255, 219, 219, 219),
               shape: BoxShape.rectangle,
               borderRadius: BorderRadius.circular(17),
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Colors.black12,
                   blurRadius: 10.0,
@@ -43,20 +43,21 @@ class CustomDialog extends StatelessWidget {
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Text(
               title,
-              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w200),
+              style:
+                  const TextStyle(fontSize: 24.0, fontWeight: FontWeight.w200),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             Text(
               description,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16.0,
               ),
             ),
-            SizedBox(height: 24.0),
+            const SizedBox(height: 24.0),
             Align(
               alignment: Alignment.bottomRight,
               child: TextButton(
-                child: Text(
+                child: const Text(
                   "Okey",
                   style: TextStyle(color: Colors.black),
                 ),
@@ -67,7 +68,7 @@ class CustomDialog extends StatelessWidget {
             ),
           ]),
         ),
-        Positioned(
+        const Positioned(
           top: 0,
           left: 16,
           right: 16,

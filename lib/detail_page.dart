@@ -1,5 +1,5 @@
-import 'package:better_future/Custom_dialog.dart';
-import 'package:better_future/Detail_cards.dart';
+import 'package:better_future/custom_dialog.dart';
+import 'package:better_future/widgets/detail_cards.dart';
 import 'package:better_future/constans/text_style.dart';
 import 'package:better_future/video_items.dart';
 import 'package:flutter/material.dart';
@@ -75,7 +75,7 @@ class DetailPage extends StatelessWidget {
                               onPressed: () {
                                 showDialog(
                                     context: context,
-                                    builder: (context) => CustomDialog(
+                                    builder: (context) => const CustomDialog(
                                           title: "Başarılı",
                                           description:
                                               "Bağış yaptığınız için teşekkür ederiz",

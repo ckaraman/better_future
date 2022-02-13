@@ -9,7 +9,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:iconsax/iconsax.dart';
 
 class ProjectVideo extends StatefulWidget {
-  ProjectVideo({Key? key}) : super(key: key);
+  const ProjectVideo({Key? key}) : super(key: key);
 
   @override
   State<ProjectVideo> createState() => _ProjectVideoState();
@@ -55,14 +55,14 @@ class _ProjectVideoState extends State<ProjectVideo>
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             /* Image.network(
               _image,
               width: 300,
             ),*/
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Text(
@@ -72,25 +72,25 @@ class _ProjectVideoState extends State<ProjectVideo>
                   color: Colors.grey.shade800,
                   fontWeight: FontWeight.bold),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               'File should be mp4',
               style: TextStyle(fontSize: 15, color: Colors.grey.shade500),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             GestureDetector(
               onTap: selectFile,
               child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                  padding: const EdgeInsets.symmetric(
+                      horizontal: 40.0, vertical: 20.0),
                   child: DottedBorder(
                     borderType: BorderType.RRect,
-                    radius: Radius.circular(10),
-                    dashPattern: [10, 4],
+                    radius: const Radius.circular(10),
+                    dashPattern: const [10, 4],
                     strokeCap: StrokeCap.round,
                     color: Colors.blue.shade400,
                     child: Container(
@@ -102,12 +102,12 @@ class _ProjectVideoState extends State<ProjectVideo>
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(
+                          const Icon(
                             Iconsax.folder_open,
                             color: Colors.blue,
                             size: 40,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 15,
                           ),
                           Text(
@@ -122,7 +122,7 @@ class _ProjectVideoState extends State<ProjectVideo>
             ),
             _platformFile != null
                 ? Container(
-                    padding: EdgeInsets.all(20),
+                    padding: const EdgeInsets.all(20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -133,25 +133,25 @@ class _ProjectVideoState extends State<ProjectVideo>
                             fontSize: 15,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Container(
-                            padding: EdgeInsets.all(8),
+                            padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white,
                                 boxShadow: [
                                   BoxShadow(
                                     color: Colors.grey.shade200,
-                                    offset: Offset(0, 1),
+                                    offset: const Offset(0, 1),
                                     blurRadius: 3,
                                     spreadRadius: 2,
                                   )
                                 ]),
                             child: Row(
                               children: [
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                                 Expanded(
@@ -161,12 +161,12 @@ class _ProjectVideoState extends State<ProjectVideo>
                                     children: [
                                       Text(
                                         _platformFile!.name,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontSize: 13,
                                             color:
                                                 Color.fromARGB(255, 238, 8, 8)),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Text(
@@ -175,7 +175,7 @@ class _ProjectVideoState extends State<ProjectVideo>
                                             fontSize: 13,
                                             color: Colors.grey.shade500),
                                       ),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 5,
                                       ),
                                       Container(
@@ -192,12 +192,12 @@ class _ProjectVideoState extends State<ProjectVideo>
                                     ],
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 10,
                                 ),
                               ],
                             )),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         MaterialButton(
@@ -205,7 +205,7 @@ class _ProjectVideoState extends State<ProjectVideo>
                           height: 45,
                           onPressed: () {},
                           color: Colors.black,
-                          child: Text(
+                          child: const Text(
                             'Upload',
                             style: TextStyle(color: Colors.white),
                           ),
@@ -213,7 +213,7 @@ class _ProjectVideoState extends State<ProjectVideo>
                       ],
                     ))
                 : Container(),
-            SizedBox(
+            const SizedBox(
               height: 150,
             ),
           ],
