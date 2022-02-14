@@ -22,7 +22,7 @@ To deploy this project run
 
 ## Screenshots
 <img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280">
-<div style="width: 60%; height: 60%">
+<div style="width: 30%; height: 30%">
   
 ![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png )
 </div>
