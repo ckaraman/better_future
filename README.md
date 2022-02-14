@@ -21,7 +21,8 @@ To deploy this project run
 
 
 ## Screenshots
-<img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="250">
+<img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280">
+
 ![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png | width=250x250)
 ![drawer-screen](https://user-images.githubusercontent.com/41169476/153850487-f3e36667-1990-48c3-a89d-49ca9fc81156.png =250x250)
 ![project-detail-screen](https://user-images.githubusercontent.com/41169476/153850600-86fea972-b9e2-4019-b748-8325efa5675c.png =250x250)
