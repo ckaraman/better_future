@@ -22,10 +22,15 @@ To deploy this project run
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholderLog.com/468x300?text=App+Screenshot+Here)
+![App Screenshot](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png)
 
+![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png)
+![drawer-screen](https://user-images.githubusercontent.com/41169476/153850487-f3e36667-1990-48c3-a89d-49ca9fc81156.png)
+![project-detail-screen](https://user-images.githubusercontent.com/41169476/153850600-86fea972-b9e2-4019-b748-8325efa5675c.png)
+![education-screen](https://user-images.githubusercontent.com/41169476/153850695-59a676a3-1c38-4008-afaa-5355d93ec707.png)
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://user-images.githubusercontent.com/41169476/153850811-e2dc32b1-be37-4f57-9c8b-3a0bb35244b2.png)
+
 
 
 ## Tech Stack
