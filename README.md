@@ -21,7 +21,7 @@ To deploy this project run
 
 
 ## Screenshots
- <a href="url"><img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280"></a>
+ <a href="url"><img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280"/></a>
 <div style="width: 30%; height: 30%">
   
 ![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png )
