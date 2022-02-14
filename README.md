@@ -21,23 +21,22 @@ To deploy this project run
 
 
 ## Screenshots
- <a href="url"><img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280"/></a>
-<div style="width: 30%; height: 30%">
+ <a href="url"><img src:"https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png" width="250" height="280" /></a>
+
   
-![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png )
-</div>
-<div style="width: 60%; height: 60%">
+![Login-screen](https://user-images.githubusercontent.com/41169476/153850346-429f8818-1a25-4347-abfc-1c4330e2cefb.png ){:height="36px" width="36px"}.
+
 ![drawer-screen](https://user-images.githubusercontent.com/41169476/153850487-f3e36667-1990-48c3-a89d-49ca9fc81156.png)
-</div>
-<div style="width: 60%; height: 60%">
+
+
 ![project-detail-screen](https://user-images.githubusercontent.com/41169476/153850600-86fea972-b9e2-4019-b748-8325efa5675c.png )
-</div>
-<div style="width: 60%; height: 60%">
+
+
 ![education-screen](https://user-images.githubusercontent.com/41169476/153850695-59a676a3-1c38-4008-afaa-5355d93ec707.png )
-</div>
+
 ![Logo](https://user-images.githubusercontent.com/41169476/153850811-e2dc32b1-be37-4f57-9c8b-3a0bb35244b2.png)
 
-</div>
+
 
 ## Tech Stack
 
@@ -47,8 +46,6 @@ To deploy this project run
 
 
 ## Badges
-
-Add badges from somewhere like: [shields.io](https://shields.io/)
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
